@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
+import Layout from "../../components/layout";
 
 export default function FirstPost() {
   return (
-    <div>
+    <Layout>
       <Head>
         <title>First Post</title>
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
       <h1>First Post</h1>
       <h2>
@@ -14,6 +14,6 @@ export default function FirstPost() {
           <a>Back to Home</a>
         </Link>
       </h2>
-    </div>
+    </Layout>
   );
 }
