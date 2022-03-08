@@ -19,13 +19,6 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <div className={styles.container}>
-        <h1 className={styles.title}>
-          Read{" "}
-          <Link href="/posts/first-post">
-            <a>this page!</a>
-          </Link>
-        </h1>
-
         <p className={styles.description}>
           Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
@@ -33,7 +26,7 @@ export default function Home({ allPostsData }) {
 
         <div className={styles.grid}>
           {allPostsData.map(({ id, title, date }) => (
-            <Link key={id} href="/posts/first-post">
+            <Link key={id} href={`/posts/${id}`}>
               <a className={styles.card}>
                 <h3>{title}</h3>
                 <p>{date}</p>
