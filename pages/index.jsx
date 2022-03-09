@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
 import styles from "../styles/home.module.css";
+import utilStyles from "../styles/utils.module.css";
 import Head from "next/head";
 import { getSortedPostsData } from "../lib/posts";
+import Date from "../components/date";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -29,7 +31,9 @@ export default function Home({ allPostsData }) {
             <Link key={id} href={`/posts/${id}`}>
               <a className={styles.card}>
                 <h3>{title}</h3>
-                <p>{date}</p>
+                <small className={utilStyles.lightText}>
+                  <Date dateString={date} />
+                </small>
               </a>
             </Link>
           ))}
